@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+    Maqolni o'chirib tashlash
+{% endblock %}
+
+{% block content %}
+
+  <form method="POST">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <h1>{{ article.title }} nomli maqolani o'chirishni xoxlaysizmi?</h1>
+    <a href="{% url 'article_detail' article.pk %}" class="btn btn-dark">Yo'q, orqaga</a>
+    <button type="submit" class="btn btn-dark">Xa, xoxlayman</button>
+  </form>
+{% endblock %}

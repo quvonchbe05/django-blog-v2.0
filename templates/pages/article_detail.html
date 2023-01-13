@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  To'liq o'qish
+{% endblock %}
+
+{% block content %}
+    {% if article.photo %}
+        <img src="{{ article.photo.url }}" alt="{{ article.title }}" class="img-fluid rounded">
+    {% endif %}
+  <h1 class="my-2">{{ article.title }}</h1>
+  <h3 class="text-muted my-3">{{ article.summary }}</h3>
+  <p>{{ article.body | safe }}</p>
+  <a href="{% url 'article_edit' article.pk %}" class="btn btn-dark">Taxrirlash</a>  
+  <a href="{% url 'article_delete' article.pk %}" class="btn btn-dark">O'chirish</a>  
+  <a href="{% url 'article_list' %}" class="btn btn-dark">Orqaga</a>  
+{% endblock %}

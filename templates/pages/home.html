@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Bosh sahifa
+{% endblock %}
+
+{% block content %}
+  <div class="p-5 mb-4 bg-light rounded-3 shadow-lg">
+    <div class="container-fluid py-5">
+      <h1 class="display-5 fw-bold">Quvonchbek Murodov</h1>
+      <p class="fs-4 my-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci dignissimos voluptate doloribus quasi itaque harum nulla maxime earum laboriosam sequi excepturi nobis aut et nostrum repudiandae non, optio, natus dolorum consequatur? Ipsum, eius, sequi, est ullam at esse eveniet veniam commodi magni nobis itaque! Dolorem officia numquam deleniti corporis iste?</p>
+      <a href="{% url 'article_list' %}" class="btn btn-dark btn-lg" type="button">Barcha maqolalar</a>
+    </div>
+  </div>
+{% endblock %}

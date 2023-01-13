@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+    Maqolani taxrirlash
+{% endblock %}
+
+{% block content %}
+  <form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.media }}
+    {{ form|crispy }}
+    <a href="{% url 'article_detail' article.pk %}" class="btn btn-dark">Orqaga</a>
+    <button type="submit" class="btn btn-dark">Taxrirlash</button>
+  </form>
+{% endblock %}
